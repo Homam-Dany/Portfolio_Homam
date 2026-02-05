@@ -9,7 +9,6 @@
   <meta name="description"
     content="Portfolio premium — Homam Dany (FST Tanger). Smart City 3D (C++/Raylib), DC-Manager (Laravel/MySQL), AI/Data, DevOps/SRE, Quantum." />
 
-  <!-- Fonts: Outfit (Modern Sans) & Cormorant Garamond (Elegant Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -17,10 +16,9 @@
     rel="stylesheet">
 
   <style>
-    /* 
-           THEME: ORGANIC ENGINEERING (SAGE & MINT)
-           Palette extracted from user image.
-        */
+    /* THEME: ORGANIC ENGINEERING (SAGE & MINT)
+            Palette extracted from user image.
+         */
     :root {
       /* Palette */
       --col-deep: #2f4f4f;
@@ -377,6 +375,86 @@
       display: block;
     }
 
+    /* NEW SECTIONS: SWOT & GANTT */
+    .swot-section, .gantt-section {
+      padding: 80px 0;
+    }
+
+    .swot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .swot-box {
+      padding: 25px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid rgba(47, 79, 79, 0.1);
+      box-shadow: var(--shadow);
+    }
+
+    .swot-box h3 {
+      margin-bottom: 15px;
+      font-family: var(--font-body);
+      font-size: 1.2rem;
+    }
+
+    .swot-box ul {
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .swot-box li {
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .strength { border-left: 5px solid #22c55e; }
+    .weakness { border-left: 5px solid #eab308; }
+    .opportunity { border-left: 5px solid #3b82f6; }
+    .threat { border-left: 5px solid #ef4444; }
+
+    .swot-summary, .gantt-note {
+      margin-top: 30px;
+      text-align: center;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    .gantt {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .gantt-item {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .gantt-item span {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--col-sage);
+    }
+
+    .bar {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 500;
+      color: #fff;
+      font-size: 0.85rem;
+    }
+
+    .bar-1 { background: linear-gradient(90deg, #5f9ea0, #2f4f4f); }
+    .bar-2 { background: linear-gradient(90deg, #a2d2c6, #5f9ea0); }
+    .bar-3 { background: linear-gradient(90deg, #5f9ea0, #2f4f4f); }
+    .bar-4 { background: linear-gradient(90deg, #a2d2c6, #5f9ea0); }
+    .bar-5 { background: linear-gradient(90deg, #2f4f4f, #5f9ea0); }
+    .bar-6 { background: linear-gradient(90deg, #5f9ea0, #a2d2c6); }
+
     /* MODAL */
     .modal-wrap {
       position: fixed;
@@ -426,8 +504,13 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .grid {
+      .grid, .swot-grid {
         grid-template-columns: 1fr;
+      }
+
+      .gantt-item {
+          grid-template-columns: 1fr;
+          gap: 8px;
       }
     }
   </style>
@@ -435,7 +518,6 @@
 
 <body>
 
-  <!-- NAV -->
   <nav class="glass-nav">
     <div class="container nav-inner">
       <a href="#" class="brand">HOMAM DANY</a>
@@ -445,6 +527,7 @@
         <a href="#projects">Projets</a>
         <a href="#skills">Compétences</a>
         <a href="#career">Parcours</a>
+        <a href="#strategy">Stratégie</a>
         <a href="#contact">Contact</a>
       </div>
       <button class="btn" style="padding: 10px 24px; font-size:0.85rem;" onclick="alert('Lien CV à insérer')">Download
@@ -452,7 +535,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <section id="about" class="hero-section">
     <div class="container">
       <span class="overline">FST Tanger • Software Engineering</span>
@@ -476,7 +558,6 @@
     </div>
   </section>
 
-  <!-- IMPACT -->
   <section id="impact" class="section-pad">
     <div class="container">
       <div class="stats-grid">
@@ -513,7 +594,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects" class="section-pad" style="background: white;">
     <div class="container">
       <span class="overline">Portfolio</span>
@@ -521,7 +601,6 @@
       <p class="section-desc">Deux projets majeurs + travaux académiques démontrant mes compétences techniques.</p>
 
       <div class="grid" style="grid-template-columns: repeat(2, 1fr);">
-        <!-- Project 1 -->
         <div class="card">
           <img src="traffic.jpg" alt="TrafficCore Interface" class="card-img">
           <div class="card-content">
@@ -542,7 +621,6 @@
           </div>
         </div>
 
-        <!-- Project 2 -->
         <div class="card">
           <img src="dc-manager.png" alt="DC Manager Dashboard" class="card-img">
           <div class="card-content">
@@ -562,7 +640,6 @@
           </div>
         </div>
 
-        <!-- Minis -->
         <div class="card" style="background: var(--col-mist); border: none;">
           <img src="db-schema.png" alt="Database Schema" class="card-img" style="height: 150px; opacity: 0.9;">
           <div class="card-content">
@@ -586,7 +663,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills" class="section-pad">
     <div class="container">
       <span class="overline">Expertise</span>
@@ -634,7 +710,6 @@
     </div>
   </section>
 
-  <!-- CAREER -->
   <section id="career" class="section-pad" style="background: white;">
     <div class="container">
       <span class="overline">Parcours</span>
@@ -660,33 +735,88 @@
     </div>
   </section>
 
-  <!-- GOALS -->
-  <section id="goals" class="section-pad">
+  <section id="strategy" class="section-pad">
     <div class="container">
-      <span class="overline">Vision (PPP)</span>
-      <h2 class="section-title">Objectifs</h2>
+        <span class="overline">Vision & Méthode</span>
+        <h2 class="section-title">Analyse Stratégique & Roadmap</h2>
 
-      <div class="grid" style="grid-template-columns: repeat(3, 1fr);">
-        <div style="background: white; padding: 32px; border-radius: var(--radius);">
-          <h4 style="color: var(--col-deep);">Plan A — AI Engineer / Data Scientist</h4>
-          <p style="margin-top: 16px; font-size: 0.9rem;">Transformer des données en décisions : analyse, modèles,
-            évaluation, clarté des résultats.</p>
+        <div class="swot-section">
+            <h3 style="margin-bottom: 30px; text-align: center; font-family: var(--font-body);">Profil SWOT</h3>
+            <div class="swot-grid">
+                <div class="swot-box strength">
+                    <h3>Forces</h3>
+                    <ul>
+                        <li>Base solide en algorithmique & POO (C++, Java, Python)</li>
+                        <li>Projets concrets et démontrables (Smart City, Data Center)</li>
+                        <li>Rigueur d’ingénierie et structuration du code</li>
+                        <li>Autonomie et apprentissage rapide</li>
+                    </ul>
+                </div>
+                <div class="swot-box weakness">
+                    <h3>Faiblesses</h3>
+                    <ul>
+                        <li>Expérience professionnelle encore limitée</li>
+                        <li>ML avancé et Cloud en cours d’acquisition</li>
+                        <li>Réseau professionnel à renforcer</li>
+                    </ul>
+                </div>
+                <div class="swot-box opportunity">
+                    <h3>Opportunités</h3>
+                    <ul>
+                        <li>Forte demande AI/Data & DevOps Junior</li>
+                        <li>Accès à des ressources open-source de qualité</li>
+                        <li>Marché international et remote</li>
+                    </ul>
+                </div>
+                <div class="swot-box threat">
+                    <h3>Menaces</h3>
+                    <ul>
+                        <li>Concurrence de profils plus expérimentés</li>
+                        <li>Évolution rapide des technologies</li>
+                        <li>Risque de dispersion sans priorisation</li>
+                    </ul>
+                </div>
+            </div>
+            <p class="swot-summary">
+                <strong>Synthèse :</strong> Mon positionnement consiste à capitaliser sur mes compétences techniques et mes projets concrets, tout en réduisant progressivement mes faiblesses par une montée en compétences ciblée.
+            </p>
         </div>
-        <div style="background: white; padding: 32px; border-radius: var(--radius);">
-          <h4 style="color: var(--col-deep);">Plan B — DevOps / SRE</h4>
-          <p style="margin-top: 16px; font-size: 0.9rem;">Fiabilité & automatisation : Linux, conteneurs, CI/CD,
-            monitoring, bonnes pratiques.</p>
+
+        <hr style="opacity: 0.1; margin: 60px 0;">
+
+        <div class="gantt-section">
+            <h3 style="margin-bottom: 30px; text-align: center; font-family: var(--font-body);">Roadmap Professionnelle</h3>
+            <div class="gantt">
+                <div class="gantt-item">
+                    <span>Fév – Mars 2026</span>
+                    <div class="bar bar-1">Structuration du profil (CV, PPP, Portfolio)</div>
+                </div>
+                <div class="gantt-item">
+                    <span>Mars – Avril 2026</span>
+                    <div class="bar bar-2">Renforcement technique (ML, Docker)</div>
+                </div>
+                <div class="gantt-item">
+                    <span>Avril – Mai 2026</span>
+                    <div class="bar bar-3">Projets preuves (Notebook DS, Dockerisation)</div>
+                </div>
+                <div class="gantt-item">
+                    <span>Mai – Juin 2026</span>
+                    <div class="bar bar-4">Candidatures ciblées (AI / DevOps Junior)</div>
+                </div>
+                <div class="gantt-item">
+                    <span>2026 – 2027</span>
+                    <div class="bar bar-5">Spécialisation & expérience terrain</div>
+                </div>
+                <div class="gantt-item">
+                    <span>Long terme</span>
+                    <div class="bar bar-6">Recherche & informatique quantique</div>
+                </div>
+            </div>
+            <p class="gantt-note">Ce planning est évolutif et sera ajusté selon les opportunités et les retours du terrain.</p>
         </div>
-        <div style="background: white; padding: 32px; border-radius: var(--radius);">
-          <h4 style="color: var(--text-light);">Plan C — Informatique quantique</h4>
-          <p style="margin-top: 16px; font-size: 0.9rem;">Vision progressive : renforcer les bases mathématiques et
-            explorer la programmation quantique.</p>
-        </div>
-      </div>
     </div>
   </section>
 
-  <!-- CONTACT -->
   <section id="contact" class="section-pad" style="background: var(--col-deep); color: white;">
     <div class="container">
       <div class="grid" style="grid-template-columns: 1fr 1fr; align-items: start;">
@@ -734,7 +864,6 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer style="padding: 40px 0; text-align: center; color: var(--text-light); font-size: 0.9rem;">
     <div class="container">
       ©
@@ -742,7 +871,6 @@
     </div>
   </footer>
 
-  <!-- MODAL -->
   <div class="modal-wrap" id="modal">
     <div class="modal-box">
       <h3 id="mTitle" style="font-size: 2rem; color: var(--col-deep); margin-bottom: 16px;">Title</h3>
@@ -810,7 +938,7 @@
         }
       });
     });
-    document.querySelectorAll('.card, .stat-item, .timeline-item').forEach(el => {
+    document.querySelectorAll('.card, .stat-item, .timeline-item, .swot-box, .gantt-item').forEach(el => {
       el.style.opacity = 0;
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'all 0.6s ease';
