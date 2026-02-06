@@ -562,14 +562,9 @@
         <a href="#contact">Contact</a>
       </div>
 
-      <!-- ✅ FIX: Download CV now works.
-           IMPORTANT: the file name must match EXACTLY.
-           Your screenshot shows "Homam Dany.pdf" (with a space).
-           So we link using URL-encoded space: Homam%20Dany.pdf
-           If you rename your file to "Homam_Dany.pdf", then replace the href accordingly.
-      -->
+      <!-- ✅ FIX CV: file on GitHub is Homam_Dany.pdf -->
       <a class="btn" style="padding: 10px 24px; font-size:0.85rem;"
-        href="Homam%20Dany.pdf" download>
+        href="./Homam_Dany.pdf" download="Homam_Dany_CV.pdf">
         Download CV
       </a>
     </div>
@@ -883,9 +878,10 @@
             </div>
           </div>
 
-          <!-- Optional extra CV link in contact section (same file) -->
+          <!-- ✅ FIX CV: same file name -->
           <div class="mt" style="margin-top: 28px;">
-            <a class="btn" href="Homam%20Dany.pdf" download style="background:white; color: var(--col-deep);">
+            <a class="btn" href="./Homam_Dany.pdf" download="Homam_Dany_CV.pdf"
+              style="background:white; color: var(--col-deep);">
               Télécharger mon CV
             </a>
           </div>
@@ -902,7 +898,7 @@
             Seriez-vous disponible pour un échange rapide ?
           </div>
           <button class="btn" style="background: white; color: var(--col-deep);"
-            onclick="navigator.clipboard.writeText('Bonjour, je suis Homam Dany, étudiant en ingénierie logicielle à la FST Tanger.\n\nJe recherche un stage / opportunité junior orienté IA / Data (ou DevOps/SRE).\nJ’ai réalisé un simulateur 3D Smart City en C++ et une plateforme Data Center en Laravel/MySQL.\n\nSeriez-vous disponible pour un échange rapide ?')">
+            onclick="navigator.clipboard.writeText('Bonjour, je suis Homam Dany, étudiant en ingénierie logicielle à la FST Tanger.\\n\\nJe recherche un stage / opportunité junior orienté IA / Data (ou DevOps/SRE).\\nJ’ai réalisé un simulateur 3D Smart City en C++ et une plateforme Data Center en Laravel/MySQL.\\n\\nSeriez-vous disponible pour un échange rapide ?')">
             Copier le message
           </button>
 
